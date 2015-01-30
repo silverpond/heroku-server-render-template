@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+createdb $DATABASE_NAME
+

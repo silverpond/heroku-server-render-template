@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+lein clj-sql-up migrate
+
+echo "done migrating."
+

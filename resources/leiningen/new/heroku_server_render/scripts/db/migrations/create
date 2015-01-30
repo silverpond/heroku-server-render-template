@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+lein clj-sql-up create $1
+
