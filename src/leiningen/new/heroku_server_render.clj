@@ -9,6 +9,7 @@
               :sanitized (name-to-path name)}]
     (main/info "Generating fresh 'lein new' heroku-server-render project.")
     (->files data
+             [".env" (render ".env" data)]
              ["Procfile" (render "Procfile" data)]
              ["project.clj" (render "project.clj" data)]
              ["README.md" (render "README.md" data)]
@@ -18,17 +19,17 @@
 
              ["resources/public/.gitkeep" (render "resources/public/.gitkeep" data)]
 
-             ["scripts/deploy" (render "scripts/deploy" data)]
-             ["scripts/repl" (render "scripts/repl" data)]
-             ["scripts/server" (render "scripts/server" data)]
+             ["scripts/deploy" (render "scripts/deploy" data) :executable true]
+             ["scripts/repl" (render "scripts/repl" data) :executable true]
+             ["scripts/server" (render "scripts/server" data) :executable true]
 
-             ["scripts/db/console" (render "scripts/db/console" data)]
-             ["scripts/db/create" (render "scripts/db/create" data)]
-             ["scripts/db/start" (render "scripts/db/start" data)]
+             ["scripts/db/console" (render "scripts/db/console" data) :executable true]
+             ["scripts/db/create" (render "scripts/db/create" data) :executable true]
+             ["scripts/db/start" (render "scripts/db/start" data) :executable true]
 
-             ["scripts/db/migrations/create" (render "scripts/db/migrations/create" data)]
-             ["scripts/db/migrations/rollback" (render "scripts/db/migrations/rollback" data)]
-             ["scripts/db/migrations/run" (render "scripts/db/migrations/run" data)]
+             ["scripts/db/migrations/create" (render "scripts/db/migrations/create" data) :executable true]
+             ["scripts/db/migrations/rollback" (render "scripts/db/migrations/rollback" data) :executable true]
+             ["scripts/db/migrations/run" (render "scripts/db/migrations/run" data) :executable true]
 
              ["src/log4j.xml" (render "src/log4j.xml" data)]
 
@@ -38,5 +39,5 @@
              ["src/{{sanitized}}/db.clj" (render "src/project/db.clj" data)]
              ["src/{{sanitized}}/web.clj" (render "src/project/web.clj" data)]
 
-             ["test/pads_web/core_test.clj" (render "test/pads_web/core_test.clj" data)]
+             ["test/{{sanitized}}/core_test.clj" (render "test/project/core_test.clj" data)]
              )))
