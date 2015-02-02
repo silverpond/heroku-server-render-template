@@ -3,6 +3,10 @@
 A Leiningen template for creating web applications intended to be hosted on
 Heroku using Postgres for storage.
 
+The Clojure community tends to prefer libraries to frameworks. This can result
+in some spin up time for new apps as you piece together your choice of
+libraries. `heroku-server-render` aims to give you a running start.
+
 It includes:
 
 * [Bidi][bidi] for request routing.
@@ -12,7 +16,9 @@ It includes:
 * [clj-sql-up][cljsqlup] for database migrations.
 * [Http-kit][httpkit] for serving web.
 
-Additionally [foreman][foreman] is used for configuration and environments.
+Environment variables are used for configuration. We recomment using
+[foreman][foreman] for managing environments. A `.env` file is created in the
+root of your project for this purpose.
 
 ## Usage
 
