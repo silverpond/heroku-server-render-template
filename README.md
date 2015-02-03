@@ -22,7 +22,13 @@ root of your project for this purpose.
 
 ## Usage
 
-For development first set up the database.
+Create your project.
+
+```sh
+lein new heroku-server-render your-project
+```
+
+Then for development first set up the database.
 
 ```sh
 foreman run ./scripts/db/start
@@ -44,6 +50,8 @@ running.
 (server)
 (def server (-main "8080"))
 ```
+
+Run it again to restart the server after making changes.
 
 ## License
 
