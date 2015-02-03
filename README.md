@@ -28,7 +28,7 @@ Create your project.
 lein new heroku-server-render your-project
 ```
 
-Then for development first set up the database.
+Set up the database for development.
 
 ```sh
 foreman run ./scripts/db/start
@@ -36,14 +36,14 @@ foreman run ./scripts/db/create
 foreman run ./scripts/db/migrations/run
 ```
 
-Then start a repl and connect from your editor.
+Start a repl and connect from your editor.
 
 ```sh
 foreman run ./scripts/repl
 ```
 
-There's a comment in `core.clj` that you can execute to get a dev server
-running.
+There's a comment at the bottom of  `core.clj` that you can execute to get a
+dev server running.
 
 ```clojure
 (in-ns 'your-project.core)
