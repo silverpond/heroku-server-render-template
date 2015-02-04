@@ -53,6 +53,19 @@ dev server running.
 
 Run it again to restart the server after making changes.
 
+## Deploying to Heroku
+
+Make sure your project is in a git repository and everything is committed.
+
+```sh
+heroku create
+heroku addons:add heroku-postgresql:hobby-dev
+heroku pg:wait
+foreman run ./scripts/deploy
+heroku run ./scripts/db/migrations/run
+heroku open
+```
+
 ## License
 
 Copyright © 2015 Silverpond Pty Ltd
